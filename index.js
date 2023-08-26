@@ -29,7 +29,7 @@ app.set("views", [_path.join(__dirname, 'views'), _path.join(__dirname, 'views/h
 app.use(express.static(__dirname + "/public"));
 app.use(flash());
 app.use((req, res, next)=> { res.locals.messages = require("express-messages")(req, res); next();});
-app.listen(process.env.PORT);
+app.listen(process.env.PORT , () => console.log("LISTENING TO PORT : "+process.env.PORT));
 app.use(function(err, req, res, next) { res.status(err.status || 500); res.send(err);});
 
 const _home = require('./routes/home')
