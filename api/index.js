@@ -34,3 +34,5 @@ app.use(function(err, req, res, next) { res.status(err.status || 500); res.send(
 
 const _home = require('../routes/home')
 app.use('/', _home);
+
+module.exports = app;
