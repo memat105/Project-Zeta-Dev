@@ -33,6 +33,6 @@ app.listen(process.env.PORT , () => console.log("LISTENING TO PORT : "+process.e
 app.use(function(err, req, res, next) { res.status(err.status || 500); res.send(err);});
 
 const _home = require('../routes/home')
-app.use('/', _home);
+app.use('/api', _home);
 
 module.exports = app;
